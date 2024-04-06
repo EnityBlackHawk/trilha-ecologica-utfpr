@@ -3,11 +3,11 @@ import { CameraView, useCameraPermissions } from "expo-camera/next";
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-export default function QrCodeScanner() {
+export default function QrCodeScanner({navigation}) {
   const [permissiton, requestPermission] = useCameraPermissions();
 
   const onQrScanned = (scanningResult) => {
-    alert(scanningResult.data)
+    navigation.navigate("scan_completed", {data : scanningResult.data});
   };
 
   return (

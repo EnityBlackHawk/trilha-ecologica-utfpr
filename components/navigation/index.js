@@ -7,11 +7,7 @@ import Photos from "../../assets/fotos.svg";
 import Feedback from "../../assets/feedback.svg";
 import Settings from "../../assets/settings.svg";
 
-export default function NavigationView({ nav }) {
-  const destinationNames = {
-    qr: "qr_scanner",
-  };
-
+export default function NavigationView({ navigation }) {
   const pin_icon = <Pin style={styles.icons} width={40} />;
   const qr_icon = <QrCode style={styles.icons} width={45} height={45} />;
   const card_icon = <Card style={styles.icons} width={40} />;
@@ -27,6 +23,7 @@ export default function NavigationView({ nav }) {
           title={"Ler QR Code"}
           text={"Aprenda sobre a fauna e a flora"}
           svg={qr_icon}
+          onPress={() => navigation.navigate("qr_scanner")}
         />
         <NavCard title={"Cards"} text={""} svg={card_icon} />
         <NavCard
