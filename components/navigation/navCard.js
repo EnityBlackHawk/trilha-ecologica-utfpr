@@ -1,10 +1,10 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 
 
-export default function NavCard({ title, text, svg }) {
+export default function NavCard({ title, text, svg, onPress }) {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       {svg}
       <Text
         style={{
@@ -16,7 +16,7 @@ export default function NavCard({ title, text, svg }) {
         {title}
       </Text>
       <Text>{text}</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 
