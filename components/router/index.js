@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import NavigationView from "../navigation";
 import HomeView from "../../pages/HomePage";
@@ -18,7 +17,7 @@ const Router = () => {
         <Stack.Screen
           name="menu"
           component={NavigationView}
-          options={{ headerShown: false }}
+          options={{ headerTitle: "Menu" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
