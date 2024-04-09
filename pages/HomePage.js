@@ -1,6 +1,6 @@
-import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
-import logo from "../assets/logo.png";
-import logoutfpr from "../assets/logo-utfpr.png";
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import logo from '../assets/cachoeira.png';
+import logoutfpr from '../assets/logo-utfpr.png';
 
 export default function HomeView({ navigation }) {
   return (
@@ -19,7 +19,7 @@ export default function HomeView({ navigation }) {
         <View style={styles.buttonWrapper}>
           <TouchableOpacity
             style={styles.continueButton}
-            onPress={() => navigation.push("menu")}
+            onPress={() => navigation.push('menu')}
           >
             <Text style={styles.buttonText}>CONTINUAR</Text>
           </TouchableOpacity>
@@ -35,20 +35,20 @@ export default function HomeView({ navigation }) {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    alignItems: "center",
-    backgroundColor: "#AFD6C4",
+    alignItems: 'center',
+    backgroundColor: '#AFD6C4',
   },
   imageLogoWrapper: {
     flex: 1,
-    width: "100%",
-    justifyContent: "space-evenly",
-    alignItems: "center",
+    width: '100%',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
   imageAndLogoWrapper: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
     gap: 30,
   },
   imageLogoContainer: {
@@ -57,46 +57,46 @@ const styles = StyleSheet.create({
   },
   imageLogo: {
     flex: 1,
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
     shadowOffset: { width: 0, height: 4 },
     shadowRadius: 4,
-    shadowColor: "#000000",
+    shadowColor: '#000000',
     shadowOpacity: 0.25,
     borderRadius: 8,
   },
   textWrapper: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
     fontSize: 24,
-    textAlign: "center",
+    textAlign: 'center',
   },
   buttonWrapper: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   continueButton: {
-    display: "flex",
+    display: 'flex',
     width: 270,
     height: 55,
-    backgroundColor: "#E2DD72",
+    backgroundColor: '#E2DD72',
     borderRadius: 16,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonText: {
     fontSize: 18,
   },
   footerWrapper: {
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   imageUTFPR: {
     width: 200,
