@@ -40,5 +40,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonsContainer: { marginTop: 64 },
-  image: { width: 190, height: 60 },
+  image: { width: 190, height: 60, marginTop: 200 },
 });

@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     height: 500,
     width: 350,
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     paddingHorizontal: 16,
   },
-  title: { fontWeight: 'bold', fontSize: 24 },
+  title: { fontWeight: 'bold', fontSize: 24, paddingBottom: 12 },
   regularText: { fontSize: 15, textAlign: 'justify' },
 });
