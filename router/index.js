@@ -8,6 +8,7 @@ import ScanCompletedPage from '../pages/completedPage';
 import Info from '../pages/Info';
 import Policy from '../pages/Policy';
 import Terms from '../pages/Terms';
+import TelaCards from '../pages/Terms';
 
 export const RouterSpecs = {
   Menu: { name: 'menu', component: NavigationView, display_name: 'Menu' },
