@@ -25,11 +25,17 @@ export default function NavigationView({ navigation }) {
           svg={qr_icon}
           onPress={() => navigation.navigate('qr_scanner')}
         />
-        <NavCard title={'Cards'} text={''} svg={card_icon} />
+        <NavCard 
+        title={'Cards'} 
+        text={''} 
+        svg={card_icon} 
+        onPress={() => navigation.navigate('Cards_Flora_Fauna')}
+        />
         <NavCard
           title={'Fotos'}
           text={'Poste suas fotos da trilha'}
           svg={photos_icon}
+          
         />
         <NavCard
           title={'Feedback'}

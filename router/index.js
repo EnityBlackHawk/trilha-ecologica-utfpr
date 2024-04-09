@@ -9,6 +9,7 @@ import Info from '../pages/Info';
 import Policy from '../pages/Policy';
 import Terms from '../pages/Terms';
 import About from '../pages/About';
+import TelaCards from '../pages/Cards';
 
 export const RouterSpecs = {
   Menu: { name: 'menu', component: NavigationView, display_name: 'Menu' },
@@ -42,6 +43,11 @@ export const RouterSpecs = {
     component: Terms,
     display_name: 'Termos de Uso',
   },
+  Cards: {
+    name: 'Cards_Flora_Fauna',
+    component: TelaCards,
+    display_name: 'Cards da Flora e Fauna'
+  }
 };
 
 const Router = () => {
@@ -69,6 +75,7 @@ const Router = () => {
             component={RouterSpecs[e].component}
             options={{
               headerTitle: RouterSpecs[e].display_name,
+              ...(RouterSpecs[e].name === 'Cards_Flora_Fauna' && { headerShown: false }),
             }}
           />
         ))}
