@@ -18,7 +18,7 @@ export default PrimaryButton;
 
 const styles = StyleSheet.create({
   buttonOuterContainer: {
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 16,
     margin: 16,
     overflow: 'hidden',
