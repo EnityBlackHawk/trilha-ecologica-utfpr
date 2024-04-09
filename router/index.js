@@ -46,8 +46,8 @@ export const RouterSpecs = {
   Cards: {
     name: 'Cards_Flora_Fauna',
     component: TelaCards,
-    display_name: 'Cards da Flora e Fauna'
-  }
+    display_name: 'Cards da Flora e Fauna',
+  },
 };
 
 const Router = () => {
@@ -57,9 +57,9 @@ const Router = () => {
       <Stack.Navigator
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#AFD6C4',
+            backgroundColor: '#FAFAFA',
           },
-          headerTintColor: 'white',
+          headerTintColor: 'black',
           contentStyle: { backgroundColor: 'white' },
         }}
       >
@@ -75,7 +75,6 @@ const Router = () => {
             component={RouterSpecs[e].component}
             options={{
               headerTitle: RouterSpecs[e].display_name,
-              ...(RouterSpecs[e].name === 'Cards_Flora_Fauna' && { headerShown: false }),
             }}
           />
         ))}
