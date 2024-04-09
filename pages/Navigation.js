@@ -5,7 +5,7 @@ import QrCode from '../assets/qr-code-outline.svg';
 import Card from '../assets/card.svg';
 import Photos from '../assets/fotos.svg';
 import Feedback from '../assets/feedback.svg';
-import Settings from '../assets/settings.svg';
+import Info from '../assets/info.svg';
 
 export default function NavigationView({ navigation }) {
   const pin_icon = <Pin style={styles.icons} width={40} />;
@@ -13,7 +13,7 @@ export default function NavigationView({ navigation }) {
   const card_icon = <Card style={styles.icons} width={40} />;
   const photos_icon = <Photos style={styles.icons} width={40} />;
   const feedback_icon = <Feedback style={styles.icons} width={40} />;
-  const settings_icon = <Settings style={styles.icons} width={40} />;
+  const info_icon = <Info style={styles.icons} width={45} />;
 
   return (
     <View style={styles.wrapper}>
@@ -39,8 +39,8 @@ export default function NavigationView({ navigation }) {
         <NavCard
           title={'Sobre'}
           text={''}
-          svg={settings_icon}
-          onPress={() => navigation.navigate('AboutUs')}
+          svg={info_icon}
+          onPress={() => navigation.navigate('Info')}
         />
       </View>
     </View>

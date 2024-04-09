@@ -1,37 +1,19 @@
 import { View, StyleSheet, Image } from 'react-native';
-import PrimaryButton from '../components/PrimaryButton';
+import Card from '../components/Card';
 import logoUTFPR from '../assets/logo-utfpr.png';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/native';
-const Stack = createStackNavigator();
+import logoTrilha from '../assets/logo-trilha.png';
 
 export default function About() {
-  const navigation = useNavigation();
-
-  const navigateToAboutUs = () => {
-    navigation.navigate('AboutUs');
-  };
-
-  const navigateToTermsOfUse = () => {
-    navigation.navigate('Termos');
-  };
-
-  const navigateToPrivacyPolicy = () => {
-    navigation.navigate('Politica');
-  };
   return (
     <View style={styles.container}>
-      <View style={styles.buttonsContainer}>
-        <PrimaryButton>SOBRE NÓS</PrimaryButton>
-        <PrimaryButton onPress={navigateToTermsOfUse}>
-          TERMOS DE USO
-        </PrimaryButton>
-        <PrimaryButton onPress={navigateToPrivacyPolicy}>
-          POLÍTICA DE PRIVACIDADE
-        </PrimaryButton>
-      </View>
-      <Image source={logoUTFPR} style={styles.image} />
+      <Image source={logoTrilha} style={styles.imageTrilha} />
+      <Card title={'SOBRE NÓS'}>
+        APP Criado pelos acadêmicos do curso de Engenharia de Software: Bruno
+        Henrique Bissotto; Gabriela Barbieri; João Vitor de Azevedo; Lilian
+        Fiori; Luan Felipe Marmentini; Luca Aguiar Costa Carvalho; Lucas Gabriel
+        Winter; Miguel da Silva Peloso; Rafael Couto Lira e Rogerio Myszko Brum.
+      </Card>
+      <Image source={logoUTFPR} style={styles.imageUTFPR} />
     </View>
   );
 }
@@ -42,6 +24,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
   },
-  buttonsContainer: { marginTop: 64 },
-  image: { width: 190, height: 60 },
+  imageUTFPR: { width: 190, height: 60 },
+  imageTrilha: { width: 100, height: 100 },
 });
