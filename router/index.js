@@ -8,6 +8,7 @@ import ScanCompletedPage from '../pages/completedPage';
 import Info from '../pages/Info';
 import Policy from '../pages/Policy';
 import Terms from '../pages/Terms';
+import About from '../pages/About';
 import TelaCards from '../pages/Cards';
 
 export const RouterSpecs = {
