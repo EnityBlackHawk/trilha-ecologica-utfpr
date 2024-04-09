@@ -5,9 +5,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import QrCodeScanner from '../pages/QrCodeScanner';
 import ScanCompletedPage from '../pages/completedPage';
-import About from '../pages/About';
+import Info from '../pages/Info';
 import Policy from '../pages/Policy';
 import Terms from '../pages/Terms';
+import About from '../pages/About';
 
 export const RouterSpecs = {
   Menu: { name: 'menu', component: NavigationView, display_name: 'Menu' },
@@ -21,10 +22,15 @@ export const RouterSpecs = {
     component: ScanCompletedPage,
     display_name: 'Scan Completed',
   },
+  Info: {
+    name: 'Info',
+    component: Info,
+    display_name: 'Sobre',
+  },
   About: {
-    name: 'AboutUs',
+    name: 'About',
     component: About,
-    display_name: 'About US',
+    display_name: 'Sobre Nós',
   },
   Policy: {
     name: 'Politica',
@@ -48,7 +54,7 @@ const Router = () => {
             backgroundColor: '#AFD6C4',
           },
           headerTintColor: 'white',
-          contentStyle: { backgroundColor: '#FAFAFA' },
+          contentStyle: { backgroundColor: 'white' },
         }}
       >
         <Stack.Screen
