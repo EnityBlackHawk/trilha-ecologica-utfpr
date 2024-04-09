@@ -1,15 +1,23 @@
 import React from "react";
-import NavigationView from "../navigation";
-import HomeView from "../../pages/HomePage";
+import NavigationView from "../pages/Navigation";
+import HomeView from "../pages/HomePage";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import QrCodeScanner from "../qr-code-scanner";
-import ScanCompletedPage from "../qr-code-scanner/completedPage";
+import QrCodeScanner from "../pages/QrCodeScanner";
+import ScanCompletedPage from "../pages/completedPage";
 
 export const RouterSpecs = {
-  Menu: { name: "menu", component: NavigationView, display_name : "Menu" },
-  QrScanner: { name: "qr_scanner", component: QrCodeScanner, display_name : "Qr Code Scanner" },
-  ScanCompleted: { name: "scan_completed", component: ScanCompletedPage, display_name : "Scan Completed" },
+  Menu: { name: "menu", component: NavigationView, display_name: "Menu" },
+  QrScanner: {
+    name: "qr_scanner",
+    component: QrCodeScanner,
+    display_name: "Qr Code Scanner",
+  },
+  ScanCompleted: {
+    name: "scan_completed",
+    component: ScanCompletedPage,
+    display_name: "Scan Completed",
+  },
 };
 
 const Router = () => {
@@ -28,7 +36,7 @@ const Router = () => {
             name={RouterSpecs[e].name}
             component={RouterSpecs[e].component}
             options={{
-              headerTitle : RouterSpecs[e].display_name,
+              headerTitle: RouterSpecs[e].display_name,
             }}
           />
         ))}

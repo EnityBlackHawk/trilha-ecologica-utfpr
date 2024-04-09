@@ -1,11 +1,11 @@
 import { View, StyleSheet, Text } from "react-native";
-import NavCard from "./navCard";
-import Pin from "../../assets/pin.svg";
-import QrCode from "../../assets/qr-code-outline.svg";
-import Card from "../../assets/card.svg";
-import Photos from "../../assets/fotos.svg";
-import Feedback from "../../assets/feedback.svg";
-import Settings from "../../assets/settings.svg";
+import NavCard from "../components/navCard";
+import Pin from "../assets/pin.svg";
+import QrCode from "../assets/qr-code-outline.svg";
+import Card from "../assets/card.svg";
+import Photos from "../assets/fotos.svg";
+import Feedback from "../assets/feedback.svg";
+import Settings from "../assets/settings.svg";
 
 export default function NavigationView({ navigation }) {
   const pin_icon = <Pin style={styles.icons} width={40} />;
