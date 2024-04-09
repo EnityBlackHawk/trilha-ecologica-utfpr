@@ -1,15 +1,9 @@
-import React from 'react'
-import { 
-  View, 
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity
- } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
- import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
- import * as Animatable from 'react-native-animatable';
+import * as Animatable from 'react-native-animatable';
 
 export default function TelaCards() {
   const navigation = useNavigation();
@@ -28,15 +22,6 @@ export default function TelaCards() {
 
   return (
     <View style={styles.container}>
-
-      <View style={styles.containerMenu}>
-        <Image
-          source={require('../assets/Menu_Sanduiche.png')}
-          style={{width: '10%'}}
-          resizeMode="contain"
-        />
-      </View>
-
       <View style={styles.containerTextoInicial}>
         <Text style={styles.textoInicial}>Cards</Text>
       </View>
@@ -46,11 +31,14 @@ export default function TelaCards() {
           <View style={styles.containerTxtFlora}>
             <Text style={styles.textoFlora}>Flora</Text>
           </View>
-          <TouchableOpacity onPress={abrirRotaCardFlora} style={styles.containerCardFlora}>
+          <TouchableOpacity
+            onPress={abrirRotaCardFlora}
+            style={styles.containerCardFlora}
+          >
             <Animatable.Image
-            animation="flipInY"
+              animation="flipInY"
               source={require('../assets/Flora_Card_TrilhaEcologica.png')}
-              style={{flex: 1, width: null, height: null, borderRadius: 25}}
+              style={{ flex: 1, width: null, height: null, borderRadius: 25 }}
               resizeMode="stretch"
             />
           </TouchableOpacity>
@@ -60,17 +48,19 @@ export default function TelaCards() {
           <View style={styles.containerTxtFauna}>
             <Text style={styles.textoFauna}>Fauna</Text>
           </View>
-          <TouchableOpacity onPress={abrirRotaCardFauna} style={styles.containerCardFauna}>
+          <TouchableOpacity
+            onPress={abrirRotaCardFauna}
+            style={styles.containerCardFauna}
+          >
             <Animatable.Image
               delay={600}
               animation="flipInY"
               source={require('../assets/Fauna_Card_TrilhaEcologica.png')}
-              style={{flex: 1, width: null, height: null, borderRadius: 25}}
+              style={{ flex: 1, width: null, height: null, borderRadius: 25 }}
               resizeMode="stretch"
             />
           </TouchableOpacity>
         </View>
-        
       </View>
 
       <View style={styles.containerButton}>
@@ -81,106 +71,111 @@ export default function TelaCards() {
 
       <View style={styles.containerLogo}>
         <Image
-          source={require('../assets/Logo_Trilha_Ecologica.png')}
-          style={{flex: 1, position: 'relative', top: '5%'}}
+          source={require('../assets/logo-trilha.png')}
+          style={{
+            flex: 1,
+            position: 'relative',
+            top: '5%',
+            left: '30%',
+            alignSelf: 'center',
+          }}
           resizeMode="contain"
         />
       </View>
-
     </View>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
-    backgroundColor: '#AFD6C4'
+    backgroundColor: '#AFD6C4',
   },
-  containerMenu:{
+  containerMenu: {
     flex: 0.1,
     justifyContent: 'center',
     alignItems: 'flex-start',
     paddingLeft: '5%',
-    paddingTop: '5%'
+    paddingTop: '5%',
   },
-  containerTextoInicial:{
+  containerTextoInicial: {
     flex: 0.1,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    paddingTop: '5%'
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingTop: '5%',
   },
-  textoInicial:{
+  textoInicial: {
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
-  containerCards:{
+  containerCards: {
     flex: 0.5,
-    flexDirection: "row"
+    flexDirection: 'row',
   },
-  containerTxtImgFlora:{
-    flex: 0.5
+  containerTxtImgFlora: {
+    flex: 0.5,
   },
-  containerTxtFlora:{
+  containerTxtFlora: {
     flex: 0.1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: "10%"
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '10%',
   },
-  textoFlora:{
-    fontSize: 15
+  textoFlora: {
+    fontSize: 15,
   },
-  containerCardFlora:{
+  containerCardFlora: {
     flex: 0.9,
     borderRadius: 25,
     marginTop: '5%',
     marginBottom: '40%',
     marginLeft: '8%',
-    marginRight: '8%'
+    marginRight: '8%',
   },
-  containerTxtImgFauna:{
-    flex: 0.5
+  containerTxtImgFauna: {
+    flex: 0.5,
   },
-  containerTxtFauna:{
+  containerTxtFauna: {
     flex: 0.1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: "10%"
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '10%',
   },
-  textoFauna:{
-    fontSize: 15
+  textoFauna: {
+    fontSize: 15,
   },
-  containerCardFauna:{
+  containerCardFauna: {
     flex: 0.9,
     borderRadius: 25,
     marginTop: '5%',
     marginBottom: '40%',
     marginLeft: '8%',
-    marginRight: '8%'
+    marginRight: '8%',
   },
-  containerButton:{
+  containerButton: {
     flex: 0.1,
-    justifyContent: "flex-start"
+    justifyContent: 'flex-start',
   },
-  button:{
+  button: {
     backgroundColor: '#E2DD72',
     borderRadius: 16,
     width: '75%',
     paddingVertical: 15,
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
     position: 'relative',
-    bottom: '30%'
+    bottom: '30%',
   },
-  buttonText:{
-    fontSize: 15
+  buttonText: {
+    fontSize: 15,
   },
-  containerLogo:{
+  containerLogo: {
     flex: 0.2,
-    justifyContent: "center",
-    alignItems: "flex-end",
+    justifyContent: 'center',
+    alignItems: 'flex-end',
     paddingEnd: '5%',
     paddingBottom: '5%',
-    paddingTop: '7%'
-  }
-})
+    paddingTop: '7%',
+  },
+});
