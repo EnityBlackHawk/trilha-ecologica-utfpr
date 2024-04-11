@@ -7,7 +7,7 @@ export default function QrCodeScanner({navigation}) {
   const [permissiton, requestPermission] = useCameraPermissions();
 
   const onQrScanned = (scanningResult) => {
-    navigation.navigate("scan_completed", {data : scanningResult.data});
+    navigation.navigate("flora_card", {data : scanningResult.data});
   };
 
   return (

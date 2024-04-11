@@ -10,6 +10,7 @@ import Policy from '../pages/Policy';
 import Terms from '../pages/Terms';
 import About from '../pages/About';
 import TelaCards from '../pages/Cards';
+import FloraCard from '../pages/FloraCard';
 
 export const RouterSpecs = {
   Menu: { name: 'menu', component: NavigationView, display_name: 'Menu' },
@@ -48,6 +49,13 @@ export const RouterSpecs = {
     component: TelaCards,
     display_name: 'Cards da Flora e Fauna',
   },
+
+  FloraCard: {
+    name : 'flora_card',
+    component : FloraCard,
+    display_name : 'Flora Card'
+  }
+
 };
 
 const Router = () => {
