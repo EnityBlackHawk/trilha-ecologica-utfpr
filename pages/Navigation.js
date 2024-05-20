@@ -8,6 +8,7 @@ import Feedback from '../assets/feedback.svg';
 import Info from '../assets/info.svg';
 
 export default function NavigationView({ navigation }) {
+
   const pin_icon = <Pin style={styles.icons} width={40} />;
   const qr_icon = <QrCode style={styles.icons} width={45} height={45} />;
   const card_icon = <Card style={styles.icons} width={40} />;

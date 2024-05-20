@@ -1,10 +1,32 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import { getData, storage } from "../firebase";
+import React, { useEffect, useState } from "react";
+import FloraCard from "./FloraCard";
+import { getDownloadURL, ref } from "firebase/storage";
 
 const ScanCompletedPage = ({ navigation, route }) => {
+
+  const [data, setData] = useState();
+  const [imageURl, setImageURL] = useState();
+
+  useEffect(() => {
+    getData().then((data) => {
+      const selected = data.filter((e) => e.id === route.params.data);
+      const dS = {};
+      Object.keys(selected[0]).forEach((key) => {
+          dS[key] = selected[0][key].value ?? selected[0][key];
+      })
+      const imageRef = ref(storage, selected[0].image);
+      getDownloadURL(imageRef).then((url) => {
+        setImageURL(url);
+      });
+      setData(dS);
+    });
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>{route.params.data}</Text>
+      {data && <FloraCard data={data} image={imageURl} />}
     </View>
   );
 };

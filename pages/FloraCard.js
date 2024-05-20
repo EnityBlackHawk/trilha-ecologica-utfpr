@@ -3,23 +3,26 @@ import image from '../assets/araucaria.jpg';
 import ModalCard from '../components/ModalCard';
 import { useState } from 'react';
 
-const classTaxonomica = 'Gimnosperma';
-const familiaBotanica = 'Araucariaceae';
-const grauAmeaca = 'EN';
-const nomePopular = 'Araucária - Pinheiro do Paraná';
-const nomeCientifico = 'Araucaria angustifolia (Bertol.) Kuntze';
-const biomaEstados = 'FOM (RS-PR)';
-const extratoVertical = 'DOSSEL (30m)';
-const populacao = 'ABUNDANTE';
-const DAP = '50-60 cm';
-const solos = 'SOLOS BEM DRENADOS';
-const idadeMaxima = '300 anos';
-const altitude = '500m - 1200m';
-const dispersores = 'Aves-Mamíferos';
-const estagio = 'PIONEIRA-MÉDIO';
-const produtos = 'MADEIRA, FRUTO';
 
-export default function FloraCard() {
+const floraInfo = {
+  classTaxonomica: 'Gimnosperma',
+  familiaBotanica: 'Araucariaceae',
+  grauAmeaca: 'EN',
+  nomePopular: 'Araucária - Pinheiro do Paraná',
+  nomeCientifico: 'Araucaria angustifolia (Bertol.) Kuntze',
+  biomaEstados: 'FOM (RS-PR)',
+  extratoVertical: 'DOSSEL (30m)',
+  populacao: 'ABUNDANTE',
+  DAP: '50-60 cm',
+  solos: 'SOLOS BEM DRENADOS',
+  idadeMaxima: '300 anos',
+  altitude: '500m - 1200m',
+  dispersores: 'Aves-Mamíferos',
+  estagio: 'PIONEIRA-MÉDIO',
+  produtos: 'MADEIRA, FRUTO'
+};
+
+export default function FloraCard({ data, image }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedDescription, setSelectedDescription] = useState('');
 
@@ -30,7 +33,7 @@ export default function FloraCard() {
 
   return (
     <>
-      <Image source={image} style={styles.image}></Image>
+      <Image src={image} style={styles.image}></Image>
       <View style={styles.mainContainer}>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
@@ -38,13 +41,13 @@ export default function FloraCard() {
               onPress={() => handleClick('Classificação Taxonômica')}
               style={styles.text}
             >
-              {classTaxonomica}
+              {data.classTaxonomica}
             </Text>
             <Text
               onPress={() => handleClick('Família Botânica')}
               style={styles.text}
             >
-              {familiaBotanica}
+              {data.familiaBotanica}
             </Text>
           </View>
           <View style={styles.halfWidth}>
@@ -52,7 +55,7 @@ export default function FloraCard() {
               onPress={() => handleClick('Grau de ameaça de extinção')}
               style={styles.textExtinction}
             >
-              {grauAmeaca}
+              {data.grauAmeaca}
             </Text>
           </View>
         </View>
@@ -62,7 +65,7 @@ export default function FloraCard() {
               onPress={() => handleClick('Nome Popular')}
               style={styles.textName}
             >
-              {nomePopular}
+              {data.nomePopular}
             </Text>
           </View>
         </View>
@@ -72,7 +75,7 @@ export default function FloraCard() {
               onPress={() => handleClick('Nome Científico')}
               style={styles.text}
             >
-              {nomeCientifico}
+              {data.nomeCientifico}
             </Text>
           </View>
         </View>
@@ -82,7 +85,7 @@ export default function FloraCard() {
               onPress={() => handleClick('Bioma e Estados')}
               style={styles.text}
             >
-              {biomaEstados}
+              {data.biomaEstados}
             </Text>
           </View>
           <View style={styles.halfWidth}>
@@ -90,14 +93,14 @@ export default function FloraCard() {
               onPress={() => handleClick('Extrato Vertical')}
               style={styles.text}
             >
-              {extratoVertical}
+              {data.extratoVertical}
             </Text>
           </View>
         </View>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
             <Text onPress={() => handleClick('População')} style={styles.text}>
-              {populacao}
+              {data.populacao}
             </Text>
           </View>
           <View style={styles.halfWidth}>
@@ -105,7 +108,7 @@ export default function FloraCard() {
               onPress={() => handleClick('DAP - Diâmetro Altura Peito')}
               style={styles.text}
             >
-              {DAP}
+              {data.DAP}
             </Text>
           </View>
         </View>
@@ -115,7 +118,7 @@ export default function FloraCard() {
               onPress={() => handleClick('Solos (Habitat)')}
               style={styles.text}
             >
-              {solos}
+              {data.solos}
             </Text>
           </View>
           <View style={styles.halfWidth}>
@@ -123,7 +126,7 @@ export default function FloraCard() {
               onPress={() => handleClick('Idade Máxima')}
               style={styles.text}
             >
-              {idadeMaxima}
+              {data.idadeMaxima}
             </Text>
           </View>
         </View>
@@ -133,7 +136,7 @@ export default function FloraCard() {
               onPress={() => handleClick('Altitude a nível do mar')}
               style={styles.text}
             >
-              {altitude}
+              {data.altitude}
             </Text>
           </View>
           <View style={styles.halfWidth}>
@@ -141,7 +144,7 @@ export default function FloraCard() {
               onPress={() => handleClick('Dispersores')}
               style={styles.text}
             >
-              {dispersores}
+              {data.dispersores}
             </Text>
           </View>
         </View>
@@ -151,12 +154,12 @@ export default function FloraCard() {
               onPress={() => handleClick('Estágio Médio')}
               style={styles.text}
             >
-              {estagio}
+              {data.estagio}
             </Text>
           </View>
           <View style={styles.halfWidth}>
             <Text onPress={() => handleClick('Produtos')} style={styles.text}>
-              {produtos}
+              {data.produtos}
             </Text>
           </View>
         </View>
