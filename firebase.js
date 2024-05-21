@@ -1,6 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
-import "firebase/compat/storage";
+// import "firebase/compat/storage";
 import {
   initializeFirestore,
   persistentLocalCache,
@@ -25,7 +25,7 @@ const app = firebase.initializeApp(firebaseConfig);
 export const db = initializeFirestore(app, {
   localCache : persistentLocalCache()
 } );
-export const storage = firebase.storage(app);
+// export const storage = firebase.storage(app);
 
 export async function getData() {
   const col = collection(db, "flora");

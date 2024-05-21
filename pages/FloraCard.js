@@ -33,7 +33,7 @@ export default function FloraCard({ data, image }) {
 
   return (
     <>
-      <Image src={image} style={styles.image}></Image>
+      <Image source={{uri : image}} style={styles.image}></Image>
       <View style={styles.mainContainer}>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>

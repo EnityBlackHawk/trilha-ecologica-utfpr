@@ -2,7 +2,6 @@ import { StyleSheet, Text, View } from "react-native";
 import { getData, storage } from "../firebase";
 import React, { useEffect, useState } from "react";
 import FloraCard from "./FloraCard";
-import { getDownloadURL, ref } from "firebase/storage";
 
 const ScanCompletedPage = ({ navigation, route }) => {
 
@@ -16,17 +15,17 @@ const ScanCompletedPage = ({ navigation, route }) => {
       Object.keys(selected[0]).forEach((key) => {
           dS[key] = selected[0][key].value ?? selected[0][key];
       })
-      const imageRef = ref(storage, selected[0].image);
-      getDownloadURL(imageRef).then((url) => {
-        setImageURL(url);
-      });
+      // const imageRef = ref(storage, selected[0].image);
+      // getDownloadURL(imageRef).then((url) => {
+      //   setImageURL(url);
+      // });
       setData(dS);
     });
   }, []);
 
   return (
     <View style={styles.container}>
-      {data && <FloraCard data={data} image={imageURl} />}
+      {data && <FloraCard data={data} image={data.image} />}
     </View>
   );
 };
@@ -36,7 +35,7 @@ export default ScanCompletedPage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "stretch",
+    justifyContent: "stretch",
   },
 });

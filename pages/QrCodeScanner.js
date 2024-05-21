@@ -6,6 +6,10 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 export default function QrCodeScanner({navigation}) {
   const [permissiton, requestPermission] = useCameraPermissions();
 
+  if(!permissiton){
+    requestPermission();
+  }
+
   const onQrScanned = (scanningResult) => {
     navigation.navigate("scan_completed", {data : scanningResult.data});
   };
