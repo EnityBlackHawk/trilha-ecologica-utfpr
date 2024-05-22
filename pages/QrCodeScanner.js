@@ -11,7 +11,7 @@ export default function QrCodeScanner({navigation}) {
   }
 
   const onQrScanned = (scanningResult) => {
-    navigation.navigate("scan_completed", {data : scanningResult.data});
+    navigation.navigate("scan_completed", {data : scanningResult.data, isNew: true});
   };
 
   return (

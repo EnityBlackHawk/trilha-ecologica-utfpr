@@ -10,6 +10,8 @@ import Policy from '../pages/Policy';
 import Terms from '../pages/Terms';
 import About from '../pages/About';
 import TelaCards from '../pages/Cards';
+import ListCards from '../pages/ListCards';
+import { ASdebug } from '../pages/ASdebug';
 
 export const RouterSpecs = {
   Menu: { name: 'menu', component: NavigationView, display_name: 'Menu' },
@@ -47,6 +49,16 @@ export const RouterSpecs = {
     name: 'Cards_Flora_Fauna',
     component: TelaCards,
     display_name: 'Cards da Flora e Fauna',
+  },
+  ListCards: {
+    name: 'ListCards',
+    component: ListCards,
+    display_name: 'Cards',
+  },
+  ASdebug: {
+    name: 'ASdebug',
+    component: ASdebug,
+    display_name: 'Debug',
   },
 };
 

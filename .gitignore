@@ -17,6 +17,8 @@ android/
 *.key
 *.mobileprovision
 
+*.apk
+
 # Metro
 .metro-health-check*
 
