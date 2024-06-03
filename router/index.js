@@ -59,7 +59,7 @@ export const RouterSpecs = {
     name: 'ASdebug',
     component: ASdebug,
     display_name: 'Debug',
-  },
+  }
 };
 
 const Router = () => {
