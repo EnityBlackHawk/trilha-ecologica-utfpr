@@ -4,23 +4,6 @@ import ModalCard from '../components/ModalCard';
 import { useState } from 'react';
 
 
-const floraInfo = {
-  classTaxonomica: 'Gimnosperma',
-  familiaBotanica: 'Araucariaceae',
-  grauAmeaca: 'EN',
-  nomePopular: 'Araucária - Pinheiro do Paraná',
-  nomeCientifico: 'Araucaria angustifolia (Bertol.) Kuntze',
-  biomaEstados: 'FOM (RS-PR)',
-  extratoVertical: 'DOSSEL (30m)',
-  populacao: 'ABUNDANTE',
-  DAP: '50-60 cm',
-  solos: 'SOLOS BEM DRENADOS',
-  idadeMaxima: '300 anos',
-  altitude: '500m - 1200m',
-  dispersores: 'Aves-Mamíferos',
-  estagio: 'PIONEIRA-MÉDIO',
-  produtos: 'MADEIRA, FRUTO'
-};
 
 export default function FloraCard({ data, image }) {
   const [modalVisible, setModalVisible] = useState(false);
@@ -38,16 +21,16 @@ export default function FloraCard({ data, image }) {
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
             <Text
-              onPress={() => handleClick('Classificação Taxonômica')}
+              onPress={() => handleClick('Classe Taxonômica')}
               style={styles.text}
             >
               {data.classTaxonomica}
             </Text>
             <Text
-              onPress={() => handleClick('Família Botânica')}
+              onPress={() => handleClick('Nome Científico')}
               style={styles.text}
             >
-              {data.familiaBotanica}
+              {data.nomeCientifico}
             </Text>
           </View>
           <View style={styles.halfWidth}>
@@ -72,89 +55,89 @@ export default function FloraCard({ data, image }) {
         <View style={styles.singleLine}>
           <View>
             <Text
-              onPress={() => handleClick('Nome Científico')}
+              onPress={() => handleClick('Fitofisionomia')}
               style={styles.text}
             >
-              {data.nomeCientifico}
+              {data.fitofisionomia}
             </Text>
           </View>
         </View>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
             <Text
-              onPress={() => handleClick('Bioma e Estados')}
+              onPress={() => handleClick('Bioma')}
               style={styles.text}
             >
-              {data.biomaEstados}
+              {data.bioma}
             </Text>
           </View>
           <View style={styles.halfWidth}>
             <Text
-              onPress={() => handleClick('Extrato Vertical')}
+              onPress={() => handleClick('Altura')}
               style={styles.text}
             >
-              {data.extratoVertical}
+              {data.altura}
             </Text>
           </View>
         </View>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
-            <Text onPress={() => handleClick('População')} style={styles.text}>
-              {data.populacao}
+            <Text onPress={() => handleClick('Diametro')} style={styles.text}>
+              {data.diametro}
             </Text>
           </View>
           <View style={styles.halfWidth}>
             <Text
-              onPress={() => handleClick('DAP - Diâmetro Altura Peito')}
+              onPress={() => handleClick('Habitat')}
               style={styles.text}
             >
-              {data.DAP}
-            </Text>
-          </View>
-        </View>
-        <View style={styles.doubleLine}>
-          <View style={styles.halfWidth}>
-            <Text
-              onPress={() => handleClick('Solos (Habitat)')}
-              style={styles.text}
-            >
-              {data.solos}
-            </Text>
-          </View>
-          <View style={styles.halfWidth}>
-            <Text
-              onPress={() => handleClick('Idade Máxima')}
-              style={styles.text}
-            >
-              {data.idadeMaxima}
+              {data.habitat}
             </Text>
           </View>
         </View>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
             <Text
-              onPress={() => handleClick('Altitude a nível do mar')}
+              onPress={() => handleClick('Longevidade')}
               style={styles.text}
             >
-              {data.altitude}
+              {data.longevidade}
             </Text>
           </View>
           <View style={styles.halfWidth}>
             <Text
-              onPress={() => handleClick('Dispersores')}
+              onPress={() => handleClick('Dispersão')}
               style={styles.text}
             >
-              {data.dispersores}
+              {data.dispersao}
             </Text>
           </View>
         </View>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
             <Text
-              onPress={() => handleClick('Estágio Médio')}
+              onPress={() => handleClick('Uso')}
               style={styles.text}
             >
-              {data.estagio}
+              {data.uso}
+            </Text>
+          </View>
+          <View style={styles.halfWidth}>
+            <Text
+              onPress={() => handleClick('Polinizadores')}
+              style={styles.text}
+            >
+              {data.polinizacao}
+            </Text>
+          </View>
+        </View>
+        <View style={styles.doubleLine}>
+          <View style={styles.halfWidth}>
+            <Text
+              onPress={() => handleClick('GS')}
+              style={styles.text}
+            >
+              {data.gs}
             </Text>
           </View>
           <View style={styles.halfWidth}>
