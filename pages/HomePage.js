@@ -1,8 +1,11 @@
 import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 import logo from '../assets/cachoeira.png';
 import logoutfpr from '../assets/logo-utfpr.png';
+import { getDataFauna, getData } from '../firebase';
 
 export default function HomeView({ navigation }) {
+  getData();
+  getDataFauna();
   return (
     <View style={styles.wrapper}>
       <View style={styles.imageLogoWrapper}>

@@ -12,6 +12,8 @@ import About from '../pages/About';
 import TelaCards from '../pages/Cards';
 import ListCards from '../pages/ListCards';
 import { ASdebug } from '../pages/ASdebug';
+import FaunaCard from '../pages/FaunaCard';
+import ListCardsFauna from '../pages/ListCardsFauna';
 
 export const RouterSpecs = {
   Menu: { name: 'menu', component: NavigationView, display_name: 'Menu' },
@@ -59,7 +61,17 @@ export const RouterSpecs = {
     name: 'ASdebug',
     component: ASdebug,
     display_name: 'Debug',
-  }
+  },
+  FaunaCard : {
+    name : 'fauna_card',
+    component : FaunaCard,
+    display_name : 'Fauna'
+  },
+  ListCardsFauna: {
+    name: 'ListCardsFauna',
+    component: ListCardsFauna,
+    display_name: 'Cards Fauna',
+  },
 };
 
 const Router = () => {

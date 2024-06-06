@@ -33,3 +33,12 @@ export async function getData() {
   });
   return data;
 }
+
+export async function getDataFauna() {
+  const col = collection(db, "fauna");
+  const result = await getDocs(col);
+  const data = result.docs.map((e) => {
+    return { ...e.data(), id: e.id };
+  });
+  return data;
+}

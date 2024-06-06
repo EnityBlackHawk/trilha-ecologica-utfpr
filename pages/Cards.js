@@ -14,7 +14,7 @@ export default function TelaCards() {
   };
 
   const abrirRotaCardFauna = () => {
-    navigation.navigate("#");
+    navigation.navigate("ListCardsFauna");
   };
 
   const abrirRotaBtnContinuar = () => {
