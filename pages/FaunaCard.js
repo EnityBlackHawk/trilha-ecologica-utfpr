@@ -18,6 +18,16 @@ export default function FaunaCard({ route }) {
     <>
       <Image source={{ uri: image }} style={styles.image}></Image>
       <View style={styles.mainContainer}>
+        <View style={styles.singleLine}>
+          <View>
+            <Text
+              onPress={() => handleClick("Tipo")}
+              style={styles.textName}
+            >
+              {data.tipo.value}
+            </Text>
+          </View>
+        </View>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
             <Text
@@ -54,10 +64,7 @@ export default function FaunaCard({ route }) {
         </View>
         <View style={styles.singleLine}>
           <View>
-            <Text
-              onPress={() => handleClick("Peso")}
-              style={styles.text}
-            >
+            <Text onPress={() => handleClick("Peso")} style={styles.text}>
               {data.peso.value}
             </Text>
           </View>
@@ -69,15 +76,21 @@ export default function FaunaCard({ route }) {
             </Text>
           </View>
           <View style={styles.halfWidth}>
-            <Text onPress={() => handleClick("Comprimento")} style={styles.text}>
+            <Text
+              onPress={() => handleClick("Comprimento")}
+              style={styles.text}
+            >
               {data.comprimento.value}
             </Text>
           </View>
         </View>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
-            <Text onPress={() => handleClick("Alimentação")} style={styles.text}>
-              {data.diametro.value}
+            <Text
+              onPress={() => handleClick("Alimentação")}
+              style={styles.text}
+            >
+              {data.alimentacao.value}
             </Text>
           </View>
           <View style={styles.halfWidth}>
@@ -88,10 +101,7 @@ export default function FaunaCard({ route }) {
         </View>
         <View style={styles.doubleLine}>
           <View style={styles.halfWidth}>
-            <Text
-              onPress={() => handleClick("Habitos")}
-              style={styles.text}
-            >
+            <Text onPress={() => handleClick("Habitos")} style={styles.text}>
               {data.habitos.value}
             </Text>
           </View>
@@ -113,18 +123,6 @@ export default function FaunaCard({ route }) {
               style={styles.text}
             >
               {data.longevidade.value}
-            </Text>
-          </View>
-        </View>
-        <View style={styles.doubleLine}>
-          <View style={styles.halfWidth}>
-            <Text onPress={() => handleClick("GS")} style={styles.text}>
-              {data.gs.value}
-            </Text>
-          </View>
-          <View style={styles.halfWidth}>
-            <Text onPress={() => handleClick("Produtos")} style={styles.text}>
-              {data.produtos.value}
             </Text>
           </View>
         </View>
