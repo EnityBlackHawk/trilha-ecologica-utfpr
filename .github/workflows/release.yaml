@@ -20,6 +20,8 @@ jobs:
             - name: Install Eas
               uses: expo/expo-github-action@v7
               with:
+                expo-version: 0.17.11
+                eas-version: 9.0.4
                 packager: npm
                 token: ${{ secrets.EXPO_KEY }}
             
