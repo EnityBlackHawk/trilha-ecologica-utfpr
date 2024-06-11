@@ -4,6 +4,8 @@ on:
       - main
   workflow_dispatch:
 
+name: Release
+
 jobs:
   build:
     name: Build
@@ -28,6 +30,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Expo project link
+        run: eas init --id ${{ secrets.EAS_PROJECT_ID }} --non-interactive
+
       - name: Build
         run: eas build --platform android --profile preview --local --output=./build --non-interactive
 
@@ -38,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.sha }}
+          release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
