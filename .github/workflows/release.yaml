@@ -1,0 +1,51 @@
+on:
+    push:
+        branches:
+        - main
+    workflow_dispatch:
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name : Checkout
+              uses: actions/checkout@v2
+              with:
+                ref: 'main'
+            
+            - name: Set up Node
+              uses: actions/setup-node@v2
+            
+            - name: Install Eas
+              uses: expo/expo-github-action@v7
+              with:
+                packager: npm
+                token: ${{ secrets.EXPO_KEY }}
+            
+            - name: Install dependencies
+              run: npm install
+
+            - name: Build
+              run: eas build --platform android --profile preview --local --output=./build
+    
+            - name: Create Release
+              id: create_release
+              uses: actions/create-release@v1
+              env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                tag_name: ${{ github.ref }}
+                release_name: Release ${{ github.sha }}
+                draft: false
+                prerelease: false
+            - name: Upload Release Asset
+              uses: actions/upload-release-asset@v1
+              env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                upload_url: ${{ steps.create_release.outputs.upload_url }}
+                asset_path: ./build
+                asset_name: app.apk
+                asset_content_type: application/apk
+            
