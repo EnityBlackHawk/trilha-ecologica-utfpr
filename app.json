@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "utfpr_trilha",
+    "name": "Trilha Ecológica",
     "slug": "utfpr_trilha",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo-trilha.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-trilha.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#AFD6C4"
     },
     "plugins": [
       [
@@ -25,12 +25,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "trilha-ecologica-utfpr"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/adaptive-icon-trilha.png",
+        "backgroundColor": "#AFD6C4"
       },
       "permissions": [
         "android.permission.CAMERA",
